@@ -1,0 +1,20 @@
+# config/services.yaml
+services:
+    # explicitly configure the service
+    knpu_lorem_ipsum.knpu_ipsum:
+      class: KnpU\LoremIpsumBundle\KnpUIpsum
+      public: true
+      arguments:
+        # - '@knpu_lorem_ipsum.knpu_word_provider'
+        - '@knpu_lorem_ipsum.word_provider'
+
+
+
+    knpu_lorem_ipsum.knpu_word_provider:
+      class: KnpU\LoremIpsumBundle\KnpUWordProvider
+      public: false
+
+    # KnpU\LoremIpsumBundle\KnpUIpsum: '@knpu_lorem_ipsum.knpu_ipsum'
+
+    KnpU\LoremIpsumBundle\KnpUIpsum: '@knpu_lorem_ipsum.knpu_ipsum'
+    knpu_lorem_ipsum.word_provider: '@knpu_lorem_ipsum.knpu_word_provider'
