@@ -8,6 +8,11 @@ services:
         # - '@ahuang_lorem_ipsum.ahuang_word_provider'
         - '@ahuang_lorem_ipsum.word_provider'
 
+    ahuang_lorem_ipsum.ahuang_ipsum_api_controller:
+      class: Ahuang\LoremIpsumBundle\Controller\IpsumApiController
+      public: true
+      arguments:
+        - '@ahuang_lorem_ipsum.ahuang_ipsum'
 
 
     ahuang_lorem_ipsum.ahuang_word_provider:

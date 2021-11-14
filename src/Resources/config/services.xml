@@ -8,7 +8,14 @@
         <!-- Explicitly configure the service -->
         <service  id="ahuang_lorem_ipsum.ahuang_ipsum"  class="Ahuang\LoremIpsumBundle\KnpUIpsum" public="true">
             <!-- <argument type="service" id="ahuang_lorem_ipsum.ahuang_word_provider" /> -->
-             <argument type="service" id="ahuang_lorem_ipsum.word_provider" />>
+             <argument type="service" id="ahuang_lorem_ipsum.word_provider" />
+        </service>
+        <service id="ahuang_lorem_ipsum.ahuang_ipsum_api_controller"
+            class="Ahuang\LoremIpsumBundle\Controller\IpsumApiController"
+            public="true"
+        >
+            <!-- <argument type="service" id="ahuang_lorem_ipsum.ahuang_word_provider" /> -->
+             <argument type="service" id="ahuang_lorem_ipsum.ahuang_ipsum" />
         </service>
         <service  id="ahuang_lorem_ipsum.ahuang_word_provider"  class="Ahuang\LoremIpsumBundle\AhuangWordProvider" public="false">
         </service>
