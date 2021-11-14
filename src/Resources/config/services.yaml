@@ -11,7 +11,7 @@ services:
 
 
     ahuang_lorem_ipsum.ahuang_word_provider:
-      class: Ahuang\LoremIpsumBundle\KnpUWordProvider
+      class: Ahuang\LoremIpsumBundle\AhuangWordProvider
       public: false
 
     # Ahuang\LoremIpsumBundle\KnpUIpsum: '@ahuang_lorem_ipsum.ahuang_ipsum'
