@@ -7,6 +7,7 @@ use Ahuang\LoremIpsumBundle\KnpUIpsum;
 use Symfony\Component\HttpKernel\Kernel;
 use Ahuang\LoremIpsumBundle\WordProviderInterface;
 use Ahuang\LoremIpsumBundle\AhuangLoremIpsumBundle;
+use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
@@ -59,8 +60,6 @@ class FunctionalTest extends TestCase
         $this->assertStringContainsString('stub',$ipsum->getWords(2));
 
     }
-
-
 }
 
 
@@ -83,6 +82,7 @@ class AhuangLoremIpsumTestKernel extends Kernel
     {
         return [
             new AhuangLoremIpsumBundle(),
+            new FrameworkBundle(),
         ];
     }
 

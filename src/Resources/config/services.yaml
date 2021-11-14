@@ -13,6 +13,7 @@ services:
       public: true
       arguments:
         - '@ahuang_lorem_ipsum.ahuang_ipsum'
+        - '@?event_dispatcher'
 
 
     ahuang_lorem_ipsum.ahuang_word_provider:
