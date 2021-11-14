@@ -111,7 +111,6 @@ class AhuangWordProvider implements WordProviderInterface
             'quality',
             'quintessential',
             'quick',
-
             'sunshine',
             'rainbows',
             'unicorns',
