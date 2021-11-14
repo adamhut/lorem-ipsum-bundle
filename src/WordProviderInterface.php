@@ -1,5 +1,5 @@
 <?php
-namespace KnpU\LoremIpsumBundle;
+namespace Ahuang\LoremIpsumBundle;
 
 interface WordProviderInterface
 {

@@ -1,0 +1,27 @@
+{
+    "name": "ahuang/lorem-ipsum-bundle",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Ahuang\\LoremIpsumBundle\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ahuang\\LoremIpsumBundle\\Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "adamhut",
+            "email": "adamhut@gmail.com"
+        }
+    ],
+    "require": {
+        "php" : "^7.1.3"
+    },
+    "require-dev": {
+        "symfony/phpunit-bridge": "^5.3"
+    }
+}

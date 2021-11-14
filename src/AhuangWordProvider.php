@@ -1,7 +1,7 @@
 <?php
-namespace KnpU\LoremIpsumBundle;
+namespace Ahuang\LoremIpsumBundle;
 
-class KnpUWordProvider implements WordProviderInterface
+class AhuangWordProvider implements WordProviderInterface
 {
     public function getWordList():array
     {

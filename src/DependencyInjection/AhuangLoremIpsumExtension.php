@@ -1,6 +1,6 @@
 <?php
 
-namespace KnpU\LoremIpsumBundle\DependencyInjection;
+namespace Ahuang\LoremIpsumBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -9,7 +9,7 @@ use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use Symfony\Component\DependencyInjection\Reference;
 
-class KnpULoremIpsumExtension extends Extension
+class AhuangLoremIpsumExtension extends Extension
 {
     public function load(array $configs, ContainerBuilder $container)
     {
@@ -27,12 +27,12 @@ class KnpULoremIpsumExtension extends Extension
 
         // var_dump($config);die;
 
-        $definition = $container->getDefinition('knpu_lorem_ipsum.knpu_ipsum');
+        $definition = $container->getDefinition('ahuang_lorem_ipsum.ahuang_ipsum');
 
         if(null!== $config['word_provider'])
         {
             // $definition->setArgument(0, new Reference($config['word_provider']) );
-            $container->setAlias('knpu_lorem_ipsum.word_provider', $config['word_provider']);
+            $container->setAlias('ahuang_lorem_ipsum.word_provider', $config['word_provider']);
         }
 
         $definition->setArgument(1, $config['unicorns_are_real']);
@@ -42,7 +42,7 @@ class KnpULoremIpsumExtension extends Extension
 
     public function getAlias()
     {
-        return 'knpu_lorem_ipsum';
+        return 'ahuang_lorem_ipsum';
     }
 
 }

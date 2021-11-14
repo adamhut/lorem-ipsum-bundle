@@ -1,20 +1,20 @@
 # config/services.yaml
 services:
     # explicitly configure the service
-    knpu_lorem_ipsum.knpu_ipsum:
-      class: KnpU\LoremIpsumBundle\KnpUIpsum
+    ahuang_lorem_ipsum.ahuang_ipsum:
+      class: Ahuang\LoremIpsumBundle\KnpUIpsum
       public: true
       arguments:
-        # - '@knpu_lorem_ipsum.knpu_word_provider'
-        - '@knpu_lorem_ipsum.word_provider'
+        # - '@ahuang_lorem_ipsum.ahuang_word_provider'
+        - '@ahuang_lorem_ipsum.word_provider'
 
 
 
-    knpu_lorem_ipsum.knpu_word_provider:
-      class: KnpU\LoremIpsumBundle\KnpUWordProvider
+    ahuang_lorem_ipsum.ahuang_word_provider:
+      class: Ahuang\LoremIpsumBundle\KnpUWordProvider
       public: false
 
-    # KnpU\LoremIpsumBundle\KnpUIpsum: '@knpu_lorem_ipsum.knpu_ipsum'
+    # Ahuang\LoremIpsumBundle\KnpUIpsum: '@ahuang_lorem_ipsum.ahuang_ipsum'
 
-    KnpU\LoremIpsumBundle\KnpUIpsum: '@knpu_lorem_ipsum.knpu_ipsum'
-    knpu_lorem_ipsum.word_provider: '@knpu_lorem_ipsum.knpu_word_provider'
+    Ahuang\LoremIpsumBundle\KnpUIpsum: '@ahuang_lorem_ipsum.ahuang_ipsum'
+    ahuang_lorem_ipsum.word_provider: '@ahuang_lorem_ipsum.ahuang_word_provider'

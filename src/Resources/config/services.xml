@@ -6,15 +6,15 @@
 
     <services>
         <!-- Explicitly configure the service -->
-        <service  id="knpu_lorem_ipsum.knpu_ipsum"  class="KnpU\LoremIpsumBundle\KnpUIpsum" public="true">
-            <!-- <argument type="service" id="knpu_lorem_ipsum.knpu_word_provider" /> -->
-             <argument type="service" id="knpu_lorem_ipsum.word_provider" />>
+        <service  id="ahuang_lorem_ipsum.ahuang_ipsum"  class="Ahuang\LoremIpsumBundle\KnpUIpsum" public="true">
+            <!-- <argument type="service" id="ahuang_lorem_ipsum.ahuang_word_provider" /> -->
+             <argument type="service" id="ahuang_lorem_ipsum.word_provider" />>
         </service>
-        <service  id="knpu_lorem_ipsum.knpu_word_provider"  class="KnpU\LoremIpsumBundle\KnpWordProvider" public="false">
+        <service  id="ahuang_lorem_ipsum.ahuang_word_provider"  class="Ahuang\LoremIpsumBundle\AhuangWordProvider" public="false">
         </service>
 
-        <service id="knpu_lorem_ipsum.word_provider" alias="knpu_lorem_ipsum.knpu_word_provider"  public="false"/>
+        <service id="ahuang_lorem_ipsum.word_provider" alias="ahuang_lorem_ipsum.ahuang_word_provider"  public="false"/>
 
-        <service id="KnpU\LoremIpsumBundle\KnpUIpsum" alias="knpu_lorem_ipsum.knpu_ipsum"  public="false"/>
+        <service id="Ahuang\LoremIpsumBundle\KnpUIpsum" alias="ahuang_lorem_ipsum.ahuang_ipsum"  public="false"/>
     </services>
 </container>

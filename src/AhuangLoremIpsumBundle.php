@@ -1,16 +1,16 @@
 <?php
-namespace KnpU\LoremIpsumBundle;
+namespace Ahuang\LoremIpsumBundle;
 
-use KnpU\LoremIpsumBundle\DependencyInjection\KnpULoremIpsumExtension;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
+use Ahuang\LoremIpsumBundle\DependencyInjection\AhuangLoremIpsumExtension;
 
-class KnpULoremIpsumBundle extends Bundle
+class AhuangLoremIpsumBundle extends Bundle
 {
 
     public function getContainerExtension()
     {
         if (null === $this->extension) {
-            $this->extension = new KnpULoremIpsumExtension();
+            $this->extension = new AhuangLoremIpsumExtension();
         }
         // $this->extension = new KnpULoremIpsumExtension();
         // var_dump($this->extension);die;

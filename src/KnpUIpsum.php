@@ -1,6 +1,6 @@
 <?php
 
-namespace KnpU\LoremIpsumBundle;
+namespace Ahuang\LoremIpsumBundle;
 
 /**
  * Generate random "lorem ipsum" text KnpUniversity style!
