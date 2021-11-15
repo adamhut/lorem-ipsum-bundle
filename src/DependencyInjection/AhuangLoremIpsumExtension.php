@@ -2,12 +2,11 @@
 
 namespace Ahuang\LoremIpsumBundle\DependencyInjection;
 
+use Ahuang\LoremIpsumBundle\WordProviderInterface;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
-use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
-use Symfony\Component\DependencyInjection\Reference;
 
 class AhuangLoremIpsumExtension extends Extension
 {
@@ -29,15 +28,17 @@ class AhuangLoremIpsumExtension extends Extension
 
         $definition = $container->getDefinition('ahuang_lorem_ipsum.ahuang_ipsum');
 
-        if(null!== $config['word_provider'])
-        {
-            // $definition->setArgument(0, new Reference($config['word_provider']) );
-            $container->setAlias('ahuang_lorem_ipsum.word_provider', $config['word_provider']);
-        }
+        // if(null!== $config['word_provider'])
+        // {
+        //     // $definition->setArgument(0, new Reference($config['word_provider']) );
+        //     $container->setAlias('ahuang_lorem_ipsum.word_provider', $config['word_provider']);
+        // }
 
         $definition->setArgument(1, $config['unicorns_are_real']);
         $definition->setArgument(2, $config['min_sunshine']);
 
+        $container->registerForAutoconfiguration(WordProviderInterface::class)
+            ->addTag('ahuang_ispum_word_provider');
     }
 
     public function getAlias()

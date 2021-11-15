@@ -20,7 +20,7 @@ services:
 
     ahuang_lorem_ipsum.ahuang_word_provider:
       class: Ahuang\LoremIpsumBundle\AhuangWordProvider
-      tags: ['ahuang_ispum_word_provider']
+      tags: [ahuang_ispum_word_provider]
       public: false
 
     # Ahuang\LoremIpsumBundle\KnpUIpsum: '@ahuang_lorem_ipsum.ahuang_ipsum'
