@@ -3,6 +3,7 @@
 namespace Ahuang\LoremIpsumBundle\Controller;
 
 use Ahuang\LoremIpsumBundle\KnpUIpsum;
+use Ahuang\LoremIpsumBundle\Event\AhuangLoremIpsumEvents;
 use Ahuang\LoremIpsumBundle\Event\FilterApiResponseEvent;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -29,7 +30,7 @@ class IpsumApiController extends AbstractController
         $event = new FilterApiResponseEvent($data);
         // $this->eventDispatcher->dispatch('ahuang_lorem_ipsum.filter_api', $event);
         if($this->eventDispatcher){
-            $this->eventDispatcher->dispatch($event);
+            $this->eventDispatcher->dispatch($event, AhuangLoremIpsumEvents::FILTER_API);
         }
 
         return $this->json($event->getData());

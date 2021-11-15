@@ -17,4 +17,9 @@ class FilterApiResponseEvent extends Event
         return $this->data;
     }
 
+    public function setData(array $data)
+    {
+        $this->data = $data;
+    }
+
 }
