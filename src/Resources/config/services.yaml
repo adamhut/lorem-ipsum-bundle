@@ -6,7 +6,9 @@ services:
       public: true
       arguments:
         # - '@ahuang_lorem_ipsum.ahuang_word_provider'
-        - '@ahuang_lorem_ipsum.word_provider'
+        # - ['@ahuang_lorem_ipsum.word_provider']
+        - !tagged_iterator ahuang_ispum_word_provider
+
 
     ahuang_lorem_ipsum.ahuang_ipsum_api_controller:
       class: Ahuang\LoremIpsumBundle\Controller\IpsumApiController
@@ -18,6 +20,7 @@ services:
 
     ahuang_lorem_ipsum.ahuang_word_provider:
       class: Ahuang\LoremIpsumBundle\AhuangWordProvider
+      tags: ['ahuang_ispum_word_provider']
       public: false
 
     # Ahuang\LoremIpsumBundle\KnpUIpsum: '@ahuang_lorem_ipsum.ahuang_ipsum'
