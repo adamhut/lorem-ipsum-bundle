@@ -46,20 +46,7 @@ class FunctionalTest extends TestCase
 
     }
 
-    public function testServiceWiringWithConfiguration()
-    {
-        $kernel = new AhuangLoremIpsumTestKernel([
-            'word_provider' => 'stub_word_list',
-        ]);
-        $kernel->boot();
 
-        $container = $kernel->getContainer();
-
-        $ipsum = $container->get('ahuang_lorem_ipsum.ahuang_ipsum');
-
-        $this->assertStringContainsString('stub',$ipsum->getWords(2));
-
-    }
 }
 
 
@@ -68,10 +55,8 @@ class AhuangLoremIpsumTestKernel extends Kernel
 {
     private $ahuangIpsumConfig;
 
-    public function __construct(array $ahuangIpsumConfig = [])
+    public function __construct()
     {
-
-        $this->ahuangIpsumConfig = $ahuangIpsumConfig;
 
         $environment = 'test';
         $debug = true;
@@ -89,9 +74,9 @@ class AhuangLoremIpsumTestKernel extends Kernel
     public function registerContainerConfiguration(LoaderInterface $loader)
     {
         $loader->load(function(ContainerBuilder $container){
-            $container->register('stub_word_list',StubWordList::class);
-
-            $container->loadFromExtension('ahuang_lorem_ipsum',$this->ahuangIpsumConfig);
+            $container->register('stub_word_list',StubWordList::class)
+                ->addTag('ahuang_ipsum_word_provider');
+            // $container->loadFromExtension('ahuang_lorem_ipsum',$this->ahuangIpsumConfig);
 
         });
     }
